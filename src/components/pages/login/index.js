@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 
 import { Layout } from '../../templates';
 import { saveAuth } from '../../../store/actions/auth';
-import { Helpers, Auth } from '../../../utils';
+import { Helpers, HasLogged } from '../../../utils';
 import SpotiFy from '../../../services/spotify';
 
 import * as S from './styles';
@@ -52,7 +52,7 @@ const Login = () => {
     }
   }, []);
 
-  if (Auth.HasLogged()) {
+  if (HasLogged()) {
     return (<Layout><Alert severity="warning">Você já está logado!</Alert></Layout>);
   }
 

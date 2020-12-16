@@ -19,7 +19,7 @@ import { Light, Dark } from '../../../themes';
 import { changeTheme } from '../../../store/actions/themes';
 import { SelectGroup } from '../../molecules';
 import { Logo } from '../../atoms';
-import { Auth } from '../../../utils';
+import { HasLogged } from '../../../utils';
 import { purgeAuth } from '../../../store/actions/auth';
 
 import * as S from './styles';
@@ -53,7 +53,7 @@ const Header = () => {
         alignItems="center"
       >
         <Grid>
-          {!Auth.HasLogged() ? <Avatar><PersonIcon /></Avatar> : <Avatar alt={ profileName } src={ profileImage[0] ? profileImage[0].url : '' } /> }
+          {!HasLogged() ? <Avatar><PersonIcon /></Avatar> : <Avatar alt={ profileName } src={ profileImage[0] ? profileImage[0].url : '' } /> }
         </Grid>
         <Grid>
           <Logo />
@@ -69,7 +69,7 @@ const Header = () => {
               <ListItemText primary="Fechar" />
             </ListItem>
             <Divider />
-            {Auth.HasLogged() && (
+            {HasLogged() && (
               <ListItem button onClick={() => logout()}>
                 <ListItemIcon><ExitToAppIcon /></ListItemIcon>
                 <ListItemText primary="Logout" />

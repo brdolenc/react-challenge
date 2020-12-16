@@ -1,9 +1,5 @@
 import { useSelector } from 'react-redux';
 
-class Auth  {
-  static HasLogged() {
-    return useSelector((state) => state.Auth.logged);
-  }
-}
+const HasLogged = () => useSelector((state) => state.Auth.logged);
 
-export default Auth;
+export default HasLogged;

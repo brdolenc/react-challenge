@@ -1,9 +1,9 @@
 import { Redirect, withRouter } from 'react-router-dom';
 
-import { Auth } from '.';
+import { HasLogged } from '.';
 
 const LoggedWrapper = ({ children }) => {
-  if (!Auth.HasLogged()) {
+  if (!HasLogged()) {
     return <Redirect to="/login" />;
   } 
 

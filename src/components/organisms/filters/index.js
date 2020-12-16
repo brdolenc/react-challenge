@@ -150,13 +150,13 @@ const Filters = () => {
             <Grid container spacing={1}>
               {buildedFilters.map((filter) => {
                   return (
-                    <Grid item lg={3} md={4} xs={12}>
+                    <Grid item lg={4} md={4} xs={12}>
                       {filter.input(filter.id, filter.name, (e) => onChangeFields(filter.id, e), filter?.values, filter?.validation)}
                     </Grid>
                   )
                 })
               }
-                <Grid item lg={3} md={4} xs={12}>
+                <Grid item lg={4} md={4} xs={12}>
                   <Button variant="contained" color="primary" size="large" href="#contained-buttons" fullWidth onClick={handleFilter}>
                     Filtrar
                   </Button>
