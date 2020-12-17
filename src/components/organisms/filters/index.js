@@ -43,9 +43,10 @@ const Filters = () => {
         select 
         variant="outlined" 
         size="small"
+        value=""
         onChange={(e) => onChangeFields(e.target.value)}
       >
-        {options.map((option) => <MenuItem value={option.value}>{option.name}</MenuItem>)}
+        {options.map((option, key) => <MenuItem key={key} value={option.value}>{option.name}</MenuItem>)}
       </S.TextFieldCustom>
     )
   }
@@ -135,7 +136,7 @@ const Filters = () => {
         id="search"
         label="Buscar playlist"
         variant="outlined"
-        value={filterValues.text}
+        value={filterValues.text ? filterValues.text : ''}
         size="small"
         onChange={(e) => filterText(e.target.value)}
         fullWidth
@@ -148,9 +149,9 @@ const Filters = () => {
           />
           {enableFilters &&
             <Grid container spacing={1}>
-              {buildedFilters.map((filter) => {
+              {buildedFilters.map((filter, key) => {
                   return (
-                    <Grid item lg={4} md={4} xs={12}>
+                    <Grid key={key} item lg={4} md={4} xs={12} key={filter.name}>
                       {filter.input(filter.id, filter.name, (e) => onChangeFields(filter.id, e), filter?.values, filter?.validation)}
                     </Grid>
                   )

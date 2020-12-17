@@ -51,7 +51,7 @@ const Playlist = () => {
     setLoading(false);
   }, []);
 
-  useEffect( async () => {
+  useEffect(() => {
     filterTextPlaylist(originalPlaylists);
     filterPlayList();
   }, [filterValues]);

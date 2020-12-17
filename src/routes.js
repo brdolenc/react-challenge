@@ -1,4 +1,4 @@
-import { Route, Switch, BrowserRouter, NotFoundRoute } from 'react-router-dom';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 
 import { Home, Login } from './components/pages';
 import LoggedWrapper from './utils/LoggedWrapper';
