@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 
 import { usePersistedState } from '../../../utils';
 
-import * as S from './styles';
-
 const SelectGroup = ({ list, handleChange }) => {
   const [theme, setTheme] = usePersistedState('@SF:selectedButton', list[0].name ? list[0].name : null);
 
